@@ -88,6 +88,8 @@ class DotFile
     puts "digraph git_log {"
     indent do
       puts "node [shape=box];"
+      puts "edge [color=Blue, style=dashed];"
+      puts "rankdir=BT;"
       yield
     end
     puts "}"
@@ -122,7 +124,7 @@ class DotFile
   end
 
   def edge(from, to, attrs = nil)
-    puts "#{nodify(from)} -> #{nodify(to)}#{attr_list(attrs)};"
+    puts "#{nodify(to)} -> #{nodify(from)}#{attr_list(attrs)};"
   end
 
   class HTML
