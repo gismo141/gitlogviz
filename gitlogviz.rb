@@ -87,6 +87,7 @@ class DotFile
   def digraph
     puts "digraph git_log {"
     indent do
+      puts "graph [dpi = 200];"
       puts "node [shape=box];"
       puts "edge [color=Blue, style=dashed];"
       puts "rankdir=BT;"
